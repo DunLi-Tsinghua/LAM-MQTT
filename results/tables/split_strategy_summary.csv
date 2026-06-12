@@ -1,0 +1,16 @@
+﻿dataset,split_type,group_field,train_size,val_size,test_size,notes
+MQTTEEB-D,random_stratified,,155796,33385,33386,70/15/15 stratified split. Source: data/processed/MQTTEEB-D__cleaned.csv
+MQTTEEB-D,time_block_split,original_row_order,155796,33385,33386,"First 70%, next 15%, last 15%; ordering is used only for splitting, not as a feature. Source: data/processed/MQTTEEB-D__cleaned.csv"
+MQTTEEB-D,group_split_not_available,,0,0,0,No explicit source_file/capture/pcap/scenario/session group field is present in the processed modeling table; no fabricated group was used.
+MQTT-IoT-IDS2020,random_stratified,,181565,38907,38907,70/15/15 stratified split. Source: data/processed/MQTT-IoT-IDS2020__cleaned.csv
+MQTT-IoT-IDS2020,time_block_split,original_row_order,181565,38906,38908,"First 70%, next 15%, last 15%; ordering is used only for splitting, not as a feature. Source: data/processed/MQTT-IoT-IDS2020__cleaned.csv"
+MQTT-IoT-IDS2020,group_split_not_available,,0,0,0,No explicit source_file/capture/pcap/scenario/session group field is present in the processed modeling table; no fabricated group was used.
+MQTTEEB-D_flow_10s,random_stratified,,3556,762,763,70/15/15 stratified split. Source: data/processed/MQTTEEB-D_flow_windows_10s.parquet
+MQTTEEB-D_flow_10s,time_block_split,original_row_order,3556,762,763,"First 70%, next 15%, last 15%; ordering is used only for splitting, not as a feature. Source: data/processed/MQTTEEB-D_flow_windows_10s.parquet"
+MQTTEEB-D_flow_10s,group_split_not_available,,0,0,0,No explicit source_file/capture/pcap/scenario/session group field is present in the processed modeling table; no fabricated group was used.
+MQTTEEB-D_flow_1s,random_stratified,,11840,2537,2538,70/15/15 stratified split. Source: data/processed/MQTTEEB-D_flow_windows_1s.parquet
+MQTTEEB-D_flow_1s,time_block_split,original_row_order,11840,2537,2538,"First 70%, next 15%, last 15%; ordering is used only for splitting, not as a feature. Source: data/processed/MQTTEEB-D_flow_windows_1s.parquet"
+MQTTEEB-D_flow_1s,group_split_not_available,,0,0,0,No explicit source_file/capture/pcap/scenario/session group field is present in the processed modeling table; no fabricated group was used.
+MQTTEEB-D_flow_5s,random_stratified,,4794,1027,1028,70/15/15 stratified split. Source: data/processed/MQTTEEB-D_flow_windows_5s.parquet
+MQTTEEB-D_flow_5s,time_block_split,original_row_order,4794,1027,1028,"First 70%, next 15%, last 15%; ordering is used only for splitting, not as a feature. Source: data/processed/MQTTEEB-D_flow_windows_5s.parquet"
+MQTTEEB-D_flow_5s,group_split_not_available,,0,0,0,No explicit source_file/capture/pcap/scenario/session group field is present in the processed modeling table; no fabricated group was used.

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Raw and large data
+data/raw/
+data/interim/
+data/processed/
+*.zip
+*.pcap
+*.pcapng
+*.parquet
+*.h5
+*.hdf5
+*.7z
+*.rar
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+outputs_temp/

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the LAM-MQTT paper and software release."
+title: "LAM-MQTT: Leakage-Audited Metadata-Only Intrusion Detection for Encrypted MQTT-Based IoT Traffic"
+authors:
+  - family-names: Li
+    given-names: Dun
+  - family-names: Li
+    given-names: Hongzhi
+  - family-names: Crespi
+    given-names: Noel
+  - family-names: Minerva
+    given-names: Roberto
+  - family-names: Li
+    given-names: Ming
+  - family-names: Liang
+    given-names: Wei
+  - family-names: Li
+    given-names: Kuan-Ching
+year: 2026
+repository-code: "https://github.com/DunLi-Tsinghua/LAM-MQTT"
+license: MIT

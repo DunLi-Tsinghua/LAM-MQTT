@@ -1,0 +1,10 @@
+﻿observed_label,final_multiclass_label,count,include_in_main_multiclass,rule
+benign,benign,10000,True,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+malicious,malicious,10000,True,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+PartOfAHorizontalPortScan,PartOfAHorizontalPortScan,10000,True,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+C&C,C&C,10000,True,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+DDoS,DDoS,10000,True,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+Attack,Attack,5962,True,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+C&C-Torii,C&C-Torii,30,False,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+C&C-FileDownload,C&C-FileDownload,14,False,use detailed label when present; fall back to coarse malicious only when detailed label is missing
+FileDownload,FileDownload,3,False,use detailed label when present; fall back to coarse malicious only when detailed label is missing

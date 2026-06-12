@@ -1,0 +1,7 @@
+﻿train_dataset,test_dataset,view,n_common_features,common_features
+MQTTEEB-D_flow_1s,MQTT-IoT-IDS2020,strict_encrypted_flow_safe,1,"[""byte_min""]"
+MQTT-IoT-IDS2020,MQTTEEB-D_flow_1s,strict_encrypted_flow_safe,1,"[""byte_min""]"
+MQTTEEB-D_flow_5s,MQTT-IoT-IDS2020,strict_encrypted_flow_safe,1,"[""byte_min""]"
+MQTT-IoT-IDS2020,MQTTEEB-D_flow_5s,strict_encrypted_flow_safe,1,"[""byte_min""]"
+MQTTEEB-D_flow_10s,MQTT-IoT-IDS2020,strict_encrypted_flow_safe,1,"[""byte_min""]"
+MQTT-IoT-IDS2020,MQTTEEB-D_flow_10s,strict_encrypted_flow_safe,1,"[""byte_min""]"

@@ -1,0 +1,31 @@
+hard_leakage_removed:
+  - label
+  - attack category
+  - scenario
+  - source_file
+  - raw IP identity
+  - exact timestamp
+  - client ID
+  - username/password
+  - payload/topic raw strings
+
+legitimate_metadata_retained:
+  - duration
+  - packet count
+  - byte statistics
+  - packet-size statistics
+  - IAT statistics
+  - rates
+  - burstiness
+  - TCP flags
+
+feature_policies:
+  audited_metadata_main:
+    description: Hard leakage and sensitive raw content are removed; legitimate encrypted-flow metadata is retained.
+  conservative_anti_leakage:
+    description: Additional highly discriminative metadata is removed as a sensitivity analysis.
+  common_cross_dataset_metadata:
+    description: Semantically aligned metadata features shared by source and target MQTT datasets.
+
+notes:
+  - High single-feature predictiveness alone is not treated as leakage.

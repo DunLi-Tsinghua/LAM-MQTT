@@ -1,0 +1,83 @@
+﻿target,model,importance_type,feature,importance
+MQTTEEB-D broker-side metadata,Random Forest,gini,num__tcp_len,0.6319808088391112
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_hdrflags_0x34,0.11949454390916688
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_hdrflags_0x35,0.07457891011666884
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__tcp_flags_0x0018,0.03825745243443932
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__tcp_flags_0x0019,0.038195091301333
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_hdrflags_0x30,0.02261187446744816
+MQTTEEB-D broker-side metadata,Random Forest,gini,num__mqtt_qos,0.0201636934843649
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_hdrflags_0x10,0.015350783023133545
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_conflags_0,0.012505731664278206
+MQTTEEB-D broker-side metadata,Random Forest,gini,num__mqtt_conflag_cleansess,0.009373598239754604
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_conflags_0x82,0.008650813834065267
+MQTTEEB-D broker-side metadata,Random Forest,gini,num__mqtt_kalive,0.005159823269417115
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__tcp_flags_0x0010,0.0013314157938952955
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_hdrflags_0xe0,0.0006327954646788959
+MQTTEEB-D broker-side metadata,Random Forest,gini,cat__mqtt_hdrflags_0x00,0.00025651299259163673
+MQTTEEB-D broker-side metadata,Random Forest,permutation,tcp_len,0.09497223261723779
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_hdrflags,0.029227000497236498
+MQTTEEB-D broker-side metadata,Random Forest,permutation,tcp_flags,0.00928211510088559
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_conack_flags,0.00021266526104954942
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_dupflag,0.0
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_conflags,-0.0033085868830058374
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_kalive,-0.009110316431272136
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_conflag_cleansess,-0.009321587961157429
+MQTTEEB-D broker-side metadata,Random Forest,permutation,mqtt_qos,-0.013640543326509769
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__byte_sum,0.1966476618030812
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__bytes_per_second,0.18890758702656046
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__packets_per_second,0.16791406558246888
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__duration,0.08946631297947415
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__packet_count,0.07402450095720299
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__iat_mean,0.07043062942495999
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__iat_max,0.06476903761804205
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__byte_min,0.02581748590782419
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__byte_std,0.02316307645867929
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__byte_mean,0.021714203277591822
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__iat_std,0.0211823807619315
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__byte_max,0.020718490752672528
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__iat_min,0.017860551576053135
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,gini,num__burstiness,0.017384015873457937
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,duration,0.021467564554984463
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,byte_sum,0.005714810240776224
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,burstiness,0.00038453679202619104
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,byte_std,0.00019226839601309552
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,packet_count,0.0
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,byte_mean,0.0
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,iat_mean,0.0
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,iat_std,0.0
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,iat_min,0.0
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,byte_max,-0.00019231643287127566
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,iat_max,-0.0003846328657425513
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,bytes_per_second,-0.0007695070587619534
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,byte_min,-0.0009615821643563782
+MQTTEEB-D strict encrypted-flow 5s,Random Forest,permutation,packets_per_second,-0.0011737760063672109
+IoT-23 strict encrypted-flow,Random Forest,gini,cat__proto_tcp,0.23078456214865725
+IoT-23 strict encrypted-flow,Random Forest,gini,cat__proto_udp,0.1744954251953241
+IoT-23 strict encrypted-flow,Random Forest,gini,num__history_count_D,0.11622569140841925
+IoT-23 strict encrypted-flow,Random Forest,gini,num__history_count_S,0.10018656241545953
+IoT-23 strict encrypted-flow,Random Forest,gini,num__orig_ip_bytes,0.08347469774251973
+IoT-23 strict encrypted-flow,Random Forest,gini,num__orig_pkts,0.04344880616162608
+IoT-23 strict encrypted-flow,Random Forest,gini,num__total_pkts,0.04288788712733069
+IoT-23 strict encrypted-flow,Random Forest,gini,num__packets_per_second,0.02448558979831873
+IoT-23 strict encrypted-flow,Random Forest,gini,num__duration,0.02380627365460048
+IoT-23 strict encrypted-flow,Random Forest,gini,cat__proto_icmp,0.016249854524164085
+IoT-23 strict encrypted-flow,Random Forest,gini,cat__conn_state_S0,0.015780728166535744
+IoT-23 strict encrypted-flow,Random Forest,gini,num__resp_ip_bytes,0.013451932003102799
+IoT-23 strict encrypted-flow,Random Forest,gini,num__resp_pkts,0.011857570293454179
+IoT-23 strict encrypted-flow,Random Forest,gini,cat__conn_state_OTH,0.011842483743527858
+IoT-23 strict encrypted-flow,Random Forest,gini,num__history_count_h,0.009929846906504777
+IoT-23 strict encrypted-flow,Random Forest,permutation,proto,0.13410435753954278
+IoT-23 strict encrypted-flow,Random Forest,permutation,duration,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,orig_bytes,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,resp_bytes,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,orig_pkts,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,resp_pkts,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,orig_ip_bytes,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,resp_ip_bytes,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,missed_bytes,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,service,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,conn_state,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,history_len,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,history_count_D,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,history_count_d,0.0
+IoT-23 strict encrypted-flow,Random Forest,permutation,history_count_S,0.0

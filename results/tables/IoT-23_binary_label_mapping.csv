@@ -1,0 +1,10 @@
+﻿observed_label,binary_label,binary_label_name,rule
+Attack,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+C&C,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+C&C-FileDownload,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+C&C-Torii,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+DDoS,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+FileDownload,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+PartOfAHorizontalPortScan,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+benign,0,benign,benign stays benign; all other IoT-23 coarse or detailed labels map to attack
+malicious,1,attack,benign stays benign; all other IoT-23 coarse or detailed labels map to attack

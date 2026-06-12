@@ -1,0 +1,30 @@
+project:
+  name: LAM-MQTT
+  random_seed: 42
+
+paths:
+  raw_data: data/raw
+  interim_data: data/interim
+  processed_data: data/processed
+  results_metrics: results/metrics
+  results_tables: results/tables
+  results_figures: results/figures
+
+datasets:
+  mqtteeb_d:
+    folder: data/raw/MQTTEEB-D
+    flow_windows_seconds: [1, 5, 10]
+  mqtt_iot_ids2020:
+    folder: data/raw/MQTT-IoT-IDS2020
+    primary_file: biflow_features.zip
+    optional_file: uniflow_features.zip
+  iot_23:
+    folder: data/raw/IoT-23
+    source_kind: labelled_zeek_flow_logs
+
+evaluation:
+  split: random_stratified
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  test_fraction: 0.15
+  primary_metric: macro_f1

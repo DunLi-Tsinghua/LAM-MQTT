@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="445.68pt" height="157.932563pt" viewBox="0 0 445.68 157.932563" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-06-12T10:45:09.286476</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.7.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 157.932563 
+L 445.68 157.932563 
+L 445.68 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 35.842547 84.133281 
+L 107.941453 84.133281 
+Q 110.391453 84.133281 110.391453 81.683281 
+L 110.391453 75.109844 
+Q 110.391453 72.659844 107.941453 72.659844 
+L 35.842547 72.659844 
+Q 33.392547 72.659844 33.392547 75.109844 
+L 33.392547 81.683281 
+Q 33.392547 84.133281 35.842547 84.133281 
+z
+" style="fill: #eef3f7; stroke: #4c78a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <text style="font: 7px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="71.892" y="80.21" transform="rotate(-0 71.892 80.21)">Encrypted MQTT traffic</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 112.707503 78.396563 
+Q 147.36717 78.396563 181.020606 78.396563 
+" style="fill: none; stroke: #4c78a8; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 178.220606 76.996562 
+L 181.020606 78.396563 
+L 178.220606 79.796563 
+" style="fill: none; stroke: #4c78a8; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 183.147812 84.131094 
+L 262.532187 84.131094 
+Q 264.982188 84.131094 264.982188 81.681094 
+L 264.982188 75.112031 
+Q 264.982188 72.662031 262.532187 72.662031 
+L 183.147812 72.662031 
+Q 180.697812 72.662031 180.697812 75.112031 
+L 180.697812 81.681094 
+Q 180.697812 84.131094 183.147812 84.131094 
+z
+" style="fill: #eef3f7; stroke: #4c78a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <text style="font: 7px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="222.84" y="80.207813" transform="rotate(-0 222.84 80.207813)">Payload/topic unavailable</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 263.655503 78.396563 
+Q 298.31517 78.396563 331.968606 78.396563 
+" style="fill: none; stroke: #4c78a8; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 329.168606 76.996562 
+L 331.968606 78.396563 
+L 329.168606 79.796563 
+" style="fill: none; stroke: #4c78a8; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 344.803625 84.131094 
+L 402.772375 84.131094 
+Q 405.222375 84.131094 405.222375 81.681094 
+L 405.222375 75.112031 
+Q 405.222375 72.662031 402.772375 72.662031 
+L 344.803625 72.662031 
+Q 342.353625 72.662031 342.353625 75.112031 
+L 342.353625 81.681094 
+Q 342.353625 84.131094 344.803625 84.131094 
+z
+" style="fill: #eef3f7; stroke: #4c78a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+    <text style="font: 7px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="373.788" y="80.207813" transform="rotate(-0 373.788 80.207813)">Metadata-only IDS</text>
+   </g>
+   <g id="text_4">
+    <text style="font: 8.4px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="222.84" y="13.212563" transform="rotate(-0 222.84 13.212563)">Problem motivation</text>
+   </g>
+  </g>
+ </g>
+</svg>

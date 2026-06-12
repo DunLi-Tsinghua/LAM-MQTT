@@ -1,0 +1,2 @@
+﻿dataset,file_path,rows,columns,label_column,label_distribution,missing_value_ratio,read_status,raw_parseable_rows_in_downloaded_logs
+IoT-23,data/processed/IoT-23_flows.parquet,56009,31,binary_label;multiclass_label,"{'benign': 10000, 'malicious': 10000, 'PartOfAHorizontalPortScan': 10000, 'C&C': 10000, 'DDoS': 10000, 'Attack': 5962, 'C&C-Torii': 30, 'C&C-FileDownload': 14, 'FileDownload': 3}",0.08671475033678343,ok,56009

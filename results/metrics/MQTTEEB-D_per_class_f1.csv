@@ -1,0 +1,121 @@
+﻿dataset,view,model,seed,class,precision,recall,f1,support
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Logistic Regression,42,bruteforce,0.7471178876905913,0.48916484051619186,0.5912301353737491,4107
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Logistic Regression,42,dos,0.4811188811188811,0.27427842449370116,0.349380459069673,6271
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Logistic Regression,42,flood,0.11701741654571843,0.4210182767624021,0.18313458262350937,1532
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Logistic Regression,42,legitimate,0.3372262773722628,0.17546524876566655,0.23082687984011993,2633
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Logistic Regression,42,malformed,0.5851581508515815,0.7292482627921668,0.6493053602564823,15830
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Logistic Regression,42,slowite,0.994140625,0.16893461666113507,0.2887943262411347,3013
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Random Forest,42,bruteforce,0.7474002647003214,0.9625030435841246,0.8414218816517666,4107
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Random Forest,42,dos,0.44989669421487605,0.41667995535002395,0.4326517095786075,6271
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Random Forest,42,flood,0.9767132401862941,0.95822454308094,0.9673805601317957,1532
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Random Forest,42,legitimate,0.5116822429906542,0.16635017090770984,0.2510748065348237,2633
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Random Forest,42,malformed,0.7791754018169113,0.4226152874289324,0.5480013106159896,15830
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Random Forest,42,slowite,0.19922425952045134,0.7500829737802854,0.31482900327366437,3013
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Extra Trees,42,bruteforce,0.7474002647003214,0.9625030435841246,0.8414218816517666,4107
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Extra Trees,42,dos,0.4540682414698163,0.41380959974485726,0.4330051727014851,6271
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Extra Trees,42,flood,0.9767132401862941,0.95822454308094,0.9673805601317957,1532
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Extra Trees,42,legitimate,0.4594594594594595,0.16786935055070262,0.24589707927677326,2633
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Extra Trees,42,malformed,0.782017648461722,0.41427668982943777,0.541625371655104,15830
+MQTTEEB-D,broker_side_secure_mqtt_metadata,Extra Trees,42,slowite,0.19738097302922555,0.755393295718553,0.312981298129813,3013
+MQTTEEB-D,broker_side_secure_mqtt_metadata,HistGradientBoosting,42,bruteforce,0.7523847376788553,0.9218407596785975,0.8285370390633547,4107
+MQTTEEB-D,broker_side_secure_mqtt_metadata,HistGradientBoosting,42,dos,0.4171771145575394,0.5104449051188008,0.4591222030981067,6271
+MQTTEEB-D,broker_side_secure_mqtt_metadata,HistGradientBoosting,42,flood,0.8464243845252052,0.9425587467362925,0.8919085855466338,1532
+MQTTEEB-D,broker_side_secure_mqtt_metadata,HistGradientBoosting,42,legitimate,0.516320474777448,0.1982529434105583,0.2864983534577387,2633
+MQTTEEB-D,broker_side_secure_mqtt_metadata,HistGradientBoosting,42,malformed,0.8056410256410257,0.39696778269109284,0.5318662716885316,15830
+MQTTEEB-D,broker_side_secure_mqtt_metadata,HistGradientBoosting,42,slowite,0.2051357733175915,0.6920013275804846,0.31646049935493664,3013
+MQTTEEB-D,broker_side_secure_mqtt_metadata,MLP,42,bruteforce,0.7474002647003214,0.9625030435841246,0.8414218816517666,4107
+MQTTEEB-D,broker_side_secure_mqtt_metadata,MLP,42,dos,0.4276850347170926,0.46164885983096793,0.44401840490797545,6271
+MQTTEEB-D,broker_side_secure_mqtt_metadata,MLP,42,flood,0.7284904688304997,0.922976501305483,0.8142816009213936,1532
+MQTTEEB-D,broker_side_secure_mqtt_metadata,MLP,42,legitimate,0.525934861278649,0.16559058108621344,0.2518775274407856,2633
+MQTTEEB-D,broker_side_secure_mqtt_metadata,MLP,42,malformed,0.701508120649652,0.7639924194567277,0.7314182038100997,15830
+MQTTEEB-D,broker_side_secure_mqtt_metadata,MLP,42,slowite,0.5409711684370258,0.2366412213740458,0.32925421380743475,3013
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Logistic Regression,42,bruteforce,0.44642857142857145,0.746268656716418,0.5586592178770949,67
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Logistic Regression,42,dos,0.6896551724137931,0.3785488958990536,0.48879837067209775,317
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Logistic Regression,42,flood,0.9681050656660413,0.9502762430939227,0.9591078066914498,543
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Logistic Regression,42,legitimate,0.6346704871060171,0.9022403258655805,0.7451640033641715,491
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Logistic Regression,42,malformed,0.9431643625192012,0.8976608187134503,0.9198501872659176,684
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Logistic Regression,42,slowite,0.8081081081081081,0.6857798165137615,0.7419354838709676,436
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Random Forest,42,bruteforce,0.43859649122807015,0.746268656716418,0.5524861878453039,67
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Random Forest,42,dos,0.851985559566787,0.7444794952681388,0.7946127946127948,317
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Random Forest,42,flood,0.9981203007518797,0.9779005524861878,0.987906976744186,543
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Random Forest,42,legitimate,0.75,0.8065173116089613,0.7772325809617273,491
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Random Forest,42,malformed,0.9360795454545454,0.9634502923976608,0.9495677233429395,684
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Random Forest,42,slowite,0.9477806788511749,0.8325688073394495,0.8864468864468864,436
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Extra Trees,42,bruteforce,0.4396551724137931,0.7611940298507462,0.5573770491803278,67
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Extra Trees,42,dos,0.8345070422535211,0.7476340694006309,0.7886855241264558,317
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Extra Trees,42,flood,0.9981167608286252,0.9760589318600368,0.9869646182495344,543
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Extra Trees,42,legitimate,0.7466918714555766,0.8044806517311609,0.7745098039215685,491
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Extra Trees,42,malformed,0.9367816091954023,0.9532163742690059,0.9449275362318841,684
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,Extra Trees,42,slowite,0.9502617801047121,0.8325688073394495,0.8875305623471883,436
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,HistGradientBoosting,42,bruteforce,0.4262295081967213,0.7761194029850746,0.5502645502645502,67
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,HistGradientBoosting,42,dos,0.8442906574394463,0.7697160883280757,0.8052805280528053,317
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,HistGradientBoosting,42,flood,0.9943820224719101,0.9779005524861878,0.9860724233983287,543
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,HistGradientBoosting,42,legitimate,0.7567567567567568,0.7983706720977597,0.7770069375619425,491
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,HistGradientBoosting,42,malformed,0.9354375896700143,0.9532163742690059,0.944243301955105,684
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,HistGradientBoosting,42,slowite,0.955026455026455,0.8279816513761468,0.8869778869778869,436
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,MLP,42,bruteforce,0.75,0.7611940298507462,0.7555555555555554,67
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,MLP,42,dos,0.7903780068728522,0.7255520504731862,0.7565789473684211,317
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,MLP,42,flood,0.9830827067669173,0.9631675874769797,0.9730232558139534,543
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,MLP,42,legitimate,0.7230514096185738,0.8879837067209776,0.7970749542961608,491
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,MLP,42,malformed,0.9503759398496241,0.9239766081871345,0.9369903632320237,684
+MQTTEEB-D_flow_1s,strict_encrypted_flow_metadata,MLP,42,slowite,0.9129287598944591,0.7935779816513762,0.849079754601227,436
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Logistic Regression,42,bruteforce,0.5227272727272727,0.6216216216216216,0.5679012345679012,37
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Logistic Regression,42,dos,0.9074074074074074,0.4260869565217391,0.5798816568047337,115
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Logistic Regression,42,flood,0.9922480620155039,0.9552238805970149,0.9733840304182508,134
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Logistic Regression,42,legitimate,0.791828793774319,0.9553990610328639,0.8659574468085106,426
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Logistic Regression,42,malformed,0.8636363636363636,0.869281045751634,0.8664495114006514,153
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Logistic Regression,42,slowite,0.849624060150376,0.6932515337423313,0.7635135135135135,163
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Random Forest,42,bruteforce,0.22950819672131148,0.7567567567567568,0.35220125786163525,37
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Random Forest,42,dos,0.7894736842105263,0.5217391304347826,0.6282722513089006,115
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Random Forest,42,flood,1.0,0.9552238805970149,0.9770992366412213,134
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Random Forest,42,legitimate,0.7914691943127962,0.784037558685446,0.7877358490566038,426
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Random Forest,42,malformed,0.9319727891156463,0.8954248366013072,0.9133333333333334,153
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Random Forest,42,slowite,0.924812030075188,0.754601226993865,0.831081081081081,163
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Extra Trees,42,bruteforce,0.21705426356589147,0.7567567567567568,0.3373493975903615,37
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Extra Trees,42,dos,0.8450704225352113,0.5217391304347826,0.6451612903225806,115
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Extra Trees,42,flood,1.0,0.9552238805970149,0.9770992366412213,134
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Extra Trees,42,legitimate,0.7961630695443646,0.7793427230046949,0.7876631079478055,426
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Extra Trees,42,malformed,0.952054794520548,0.9084967320261438,0.9297658862876256,153
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,Extra Trees,42,slowite,0.9343065693430657,0.7852760736196319,0.8533333333333333,163
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,HistGradientBoosting,42,bruteforce,0.2283464566929134,0.7837837837837838,0.3536585365853659,37
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,HistGradientBoosting,42,dos,0.8157894736842105,0.5391304347826087,0.6492146596858638,115
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,HistGradientBoosting,42,flood,1.0,0.9552238805970149,0.9770992366412213,134
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,HistGradientBoosting,42,legitimate,0.8063725490196079,0.7723004694835681,0.7889688249400479,426
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,HistGradientBoosting,42,malformed,0.9455782312925171,0.9084967320261438,0.9266666666666667,153
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,HistGradientBoosting,42,slowite,0.9225352112676056,0.803680981595092,0.8590163934426229,163
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,MLP,42,bruteforce,0.5111111111111111,0.6216216216216216,0.5609756097560976,37
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,MLP,42,dos,0.9074074074074074,0.4260869565217391,0.5798816568047337,115
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,MLP,42,flood,0.9846153846153847,0.9552238805970149,0.9696969696969696,134
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,MLP,42,legitimate,0.791828793774319,0.9553990610328639,0.8659574468085106,426
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,MLP,42,malformed,0.8733333333333333,0.8562091503267973,0.8646864686468646,153
+MQTTEEB-D_flow_5s,strict_encrypted_flow_metadata,MLP,42,slowite,0.8518518518518519,0.7055214723926381,0.7718120805369127,163
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Logistic Regression,42,bruteforce,0.8181818181818182,0.5806451612903226,0.679245283018868,31
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Logistic Regression,42,dos,0.9736842105263158,0.43529411764705883,0.6016260162601627,85
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Logistic Regression,42,flood,0.9605263157894737,0.9358974358974359,0.948051948051948,78
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Logistic Regression,42,legitimate,0.8181818181818182,0.9448818897637795,0.876979293544458,381
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Logistic Regression,42,malformed,0.7788461538461539,0.9310344827586207,0.8481675392670157,87
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Logistic Regression,42,slowite,0.8313253012048193,0.6831683168316832,0.75,101
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Random Forest,42,bruteforce,0.23157894736842105,0.7096774193548387,0.3492063492063492,31
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Random Forest,42,dos,0.6727272727272727,0.43529411764705883,0.5285714285714287,85
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Random Forest,42,flood,0.9866666666666667,0.9487179487179487,0.9673202614379085,78
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Random Forest,42,legitimate,0.8169014084507042,0.7611548556430446,0.7880434782608696,381
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Random Forest,42,malformed,0.8829787234042553,0.9540229885057471,0.9171270718232043,87
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Random Forest,42,slowite,0.898876404494382,0.7920792079207921,0.8421052631578948,101
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Extra Trees,42,bruteforce,0.205607476635514,0.7096774193548387,0.3188405797101449,31
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Extra Trees,42,dos,0.6785714285714286,0.4470588235294118,0.5390070921985817,85
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Extra Trees,42,flood,0.9863013698630136,0.9230769230769231,0.9536423841059603,78
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Extra Trees,42,legitimate,0.8092485549132948,0.7349081364829396,0.7702888583218708,381
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Extra Trees,42,malformed,0.8924731182795699,0.9540229885057471,0.9222222222222222,87
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,Extra Trees,42,slowite,0.8977272727272727,0.7821782178217822,0.835978835978836,101
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,HistGradientBoosting,42,bruteforce,0.22772277227722773,0.7419354838709677,0.3484848484848485,31
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,HistGradientBoosting,42,dos,0.7551020408163265,0.43529411764705883,0.5522388059701493,85
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,HistGradientBoosting,42,flood,1.0,0.9487179487179487,0.9736842105263158,78
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,HistGradientBoosting,42,legitimate,0.8243626062322946,0.7637795275590551,0.7929155313351499,381
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,HistGradientBoosting,42,malformed,0.8829787234042553,0.9540229885057471,0.9171270718232043,87
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,HistGradientBoosting,42,slowite,0.8913043478260869,0.8118811881188119,0.8497409326424871,101
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,MLP,42,bruteforce,0.72,0.5806451612903226,0.6428571428571428,31
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,MLP,42,dos,1.0,0.4117647058823529,0.5833333333333334,85
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,MLP,42,flood,0.9487179487179487,0.9487179487179487,0.9487179487179487,78
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,MLP,42,legitimate,0.8181818181818182,0.9448818897637795,0.876979293544458,381
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,MLP,42,malformed,0.7614678899082569,0.9540229885057471,0.846938775510204,87
+MQTTEEB-D_flow_10s,strict_encrypted_flow_metadata,MLP,42,slowite,0.8289473684210527,0.6237623762376238,0.7118644067796609,101

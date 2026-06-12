@@ -1,0 +1,8 @@
+﻿dataset,task,label,label_name,count,percent
+MQTT-IoT-IDS2020,binary,0,benign,188378,0.7262654262681251
+MQTT-IoT-IDS2020,binary,1,attack,71001,0.273734573731875
+MQTT-IoT-IDS2020,multiclass,benign,benign,188378,0.7262654262681251
+MQTT-IoT-IDS2020,multiclass,biflow_scan_sU,biflow_scan_sU,22434,0.08649119628034652
+MQTT-IoT-IDS2020,multiclass,biflow_scan_A,biflow_scan_A,19907,0.07674869592372552
+MQTT-IoT-IDS2020,multiclass,biflow_mqtt_bruteforce,biflow_mqtt_bruteforce,14544,0.05607238828124096
+MQTT-IoT-IDS2020,multiclass,biflow_sparta,biflow_sparta,14116,0.05442229324656198

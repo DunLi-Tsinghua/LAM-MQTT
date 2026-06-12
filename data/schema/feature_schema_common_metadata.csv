@@ -1,0 +1,15 @@
+feature_name,description
+packet_count,Number of packets in the flow or aggregation window
+byte_sum,Total bytes in the flow or aggregation window
+byte_mean,Mean packet byte length
+byte_std,Standard deviation of packet byte length
+byte_min,Minimum packet byte length
+byte_max,Maximum packet byte length
+duration,Flow or aggregation-window duration
+iat_mean,Mean inter-arrival time
+iat_std,Standard deviation of inter-arrival time
+iat_min,Minimum inter-arrival time
+iat_max,Maximum inter-arrival time
+bytes_per_second,Byte rate
+packets_per_second,Packet rate
+burstiness,Flow burstiness statistic
