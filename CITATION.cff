@@ -8,14 +8,8 @@ authors:
     given-names: Hongzhi
   - family-names: Crespi
     given-names: Noel
-  - family-names: Minerva
-    given-names: Roberto
-  - family-names: Li
-    given-names: Ming
   - family-names: Liang
     given-names: Wei
-  - family-names: Li
-    given-names: Kuan-Ching
 year: 2026
 repository-code: "https://github.com/DunLi-Tsinghua/LAM-MQTT"
 license: MIT

@@ -64,7 +64,7 @@ scripts\reproduce_stage2B.bat
 - `configs/`: default paths and feature policy definitions.
 - `data/schema/`: expected dataset layout and metadata feature schema.
 - `results/`: lightweight metric tables, analysis tables, and manuscript figures.
-- `paper/`: submitted manuscript source and preprint PDF snapshot.
+- `paper/`: latest manuscript source (`main.tex`), bibliography (`references.bib`), figures, and PDF snapshot.
 - `docs/`: reproducibility, dataset, feature-policy, and leakage-audit notes.
 
 ## Citation
@@ -72,7 +72,7 @@ scripts\reproduce_stage2B.bat
 ```bibtex
 @misc{lam_mqtt_2026,
   title = {LAM-MQTT: Leakage-Audited Metadata-Only Intrusion Detection for Encrypted MQTT-Based IoT Traffic},
-  author = {Li, Dun and Li, Hongzhi and Crespi, Noel and Minerva, Roberto and Li, Ming and Liang, Wei and Li, Kuan-Ching},
+  author = {Li, Dun and Li, Hongzhi and Crespi, Noel and Liang, Wei},
   year = {2026},
   howpublished = {\url{https://github.com/DunLi-Tsinghua/LAM-MQTT}}
 }

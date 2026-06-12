@@ -25,7 +25,7 @@
 \usepackage{subfigure}
 \usepackage{subcaption}
 \usepackage{tikz,xcolor,hyperref}
-\graphicspath{{figures_stage3C/}}
+\graphicspath{{figures/}}
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \definecolor{lime}{HTML}{A6CE39}
@@ -44,11 +44,8 @@
 \newcommand{\orcidauthorA}{0000-0002-1986-7144}
 \newcommand{\orcidauthorL}{0000-0001-5755-7115}
 \newcommand{\orcidauthorN}{0000-0003-2962-192X}
-\newcommand{\orcidauthorR}{0000-0001-5441-9665}
 \newcommand{\orcidauthorZ}{0000-0002-6851-0117}
-\newcommand{\orcidauthorK}{0000-0003-1381-4364}
 \newcommand{\orcidauthorP}{0000-0002-6747-6367}
-\newcommand{\orcidauthorM}{0000-0003-4119-7340}
 \newcommand{\orcidauthorH}{0000-0002-5883-3780}
 \newcommand{\orcidauthorB}{0000-0001-8861-5461}
 \newcommand{\orcidauthorW}{0000-0002-5074-1363}
@@ -60,10 +57,7 @@
 Dun Li\orcidA{},
 Hongzhi Li\orcidH{},
 Noel Crespi\orcidN{},
-Roberto Minerva\orcidR{},
-Ming Li\orcidM{},
-Wei Liang\orcidW{},
-Kuan-Ching Li\orcidK{}
+Wei Liang\orcidW{}
 
 \thanks{
 Dun Li is with the Department of Industrial Engineering, Tsinghua University, China, and Samovar, Telecom SudParis, Institut Polytechnique de Paris, 91120 Palaiseau, France. E-mail:lidunshmtu@outlook.com
@@ -78,22 +72,11 @@ Noel Crespi is with Samovar, Telecom SudParis, Institut Polytechnique de Paris, 
 }
 
 \thanks{
-Roberto Minerva is with Samovar, Telecom SudParis, Institut Polytechnique de Paris, 91120 Palaiseau, France. Email: roberto.minerva@telecom-sudparis.eu
-}
-
-\thanks{
-Ming Li is with the Research Institute for Advanced Manufacturing, The Hong Kong Polytechnic University, Hung Hom, Hong Kong, China. Email: ming.li@polyu.edu.hk
-}
-
-\thanks{
 Wei Liang is with the School of Computer Science and Engineering, Hunan University of Science and Technology, and Hunan Key Laboratory for Service Computing and Novel Software Technology, China. E-mail: wliang@hnust.edu.cn
 }
 
 \thanks{
-Kuan-Ching Li is with the Dept. of Computer Science and Information Engineering, Providence University, Taiwan. E-mail: kuancli@pu.edu.tw}
-
-\thanks{
-Corresponding Authors: Kuan-Ching Li, Noel Crespi, Hongzhi Li}
+Corresponding Authors: Noel Crespi, Hongzhi Li}
 }
 
 \markboth{IEEE Internet of Things Journal,~Vol.~XX, No.~XX, 2026}%
@@ -111,15 +94,19 @@ Encrypted traffic analysis, intrusion detection, leakage audit, metadata-only mo
 
 \section{Introduction}
 \label{sec:introduction}
-\IEEEPARstart{M}{essage} Queuing Telemetry Transport (MQTT) is a lightweight publish-subscribe protocol widely used in IoT and Industrial Internet of Things (IIoT) environments \cite{mqtt5,sisinni2018industrial}. MQTT clients publish telemetry to a broker, while subscribers receive messages through topic-based routing. This architecture is attractive for resource-constrained devices because it decouples producers and consumers and reduces communication overhead. It also creates an operational security challenge: compromised clients, abnormal publish/subscribe patterns, denial-of-service behavior, brute-force attempts, and malformed protocol interactions can all appear in broker-mediated traffic \cite{hindy2020mqttiot,mqtteebd2025}.
+\IEEEPARstart{M}{essage} Queuing Telemetry Transport (MQTT) is a lightweight publish-subscribe protocol widely used in IoT and Industrial Internet of Things (IIoT) environments \cite{mqtt5,sisinni2018industrial}. MQTT clients publish telemetry to a broker, while subscribers receive messages through topic-based routing. This architecture is attractive for resource-constrained devices because it decouples producers and consumers and reduces communication overhead. It also creates an operational security challenge: compromised clients, abnormal publish/subscribe patterns, denial-of-service behavior, brute-force attempts, and malformed protocol interactions can all appear in broker-mediated traffic.
 
-The monitoring setting is increasingly constrained by encryption and privacy requirements. TLS protects application content in transit \cite{rfc8446}; privacy policies and deployment boundaries may also prevent inspection of raw payloads, raw topic strings, usernames, passwords, client identifiers, and raw IP identities. Intrusion detection systems (IDSs) that rely on such fields can therefore be difficult to deploy, reproduce, or justify. This motivates metadata-only detection: instead of inspecting content, a detector can use flow duration, packet counts, byte statistics, packet-size statistics, inter-arrival-time (IAT) statistics, rates, burstiness, and TCP flag counts.
+In practical deployments, MQTT monitoring is often positioned at the broker, gateway, or network edge rather than inside each constrained device. Such monitors may observe connection behavior and packet dynamics, but they cannot necessarily inspect application semantics. This creates a gap between conventional intrusion detection features, which may assume access to protocol content or endpoint identifiers, and what is actually available in privacy-preserving or encrypted deployments.
 
-Metadata-only detection is useful but risky. It is useful because many attacks alter observable communication dynamics even when payloads are encrypted. It is risky because public security datasets can contain artifacts that inflate within-dataset scores, including labels, attack-category fields, scenario names, source-file indicators, exact timestamps, and raw identity fields \cite{ring2019survey,sommer2010outside}. Random within-dataset splits can further overestimate deployment performance when dataset-specific patterns are shared between training and test partitions. A credible evaluation must therefore distinguish legitimate encrypted-flow metadata from hard leakage, and it must evaluate robustness beyond a single random split.
+The monitoring setting is increasingly constrained by encryption and privacy requirements. TLS protects application content in transit \cite{rfc8446}; privacy policies and deployment boundaries may also prevent inspection of raw payloads, raw topic strings, usernames, passwords, client identifiers, and raw IP identities. Intrusion detection systems (IDSs) that rely on such fields can therefore be difficult to deploy, reproduce, or justify. This motivates metadata-only detection: instead of inspecting content, a detector can use flow duration, packet counts, byte statistics, packet-size statistics, inter-arrival-time (IAT) statistics, rates, burstiness, and TCP flag counts, a direction consistent with prior flow and encrypted-traffic analysis \cite{karagiannis2005blinc,drapergil2016vpn}.
+
+The central question is therefore not whether metadata can replace protocol security, but whether a carefully bounded metadata signal can provide an additional detection layer. Such a layer is complementary to access-control and data-governance mechanisms for IIoT, including smart-contract and proof-inspired access-control schemes \cite{li2025hyperiiot,li2025dpsiiot}. Answering this question requires an explicit observability model: features should be admitted only when they would plausibly remain available without decrypting traffic or collecting sensitive raw fields.
+
+Metadata-only detection is useful but risky. It is useful because many attacks alter observable communication dynamics even when payloads are encrypted. It is risky because public security datasets can contain artifacts that inflate within-dataset scores, including labels, attack-category fields, scenario names, source-file indicators, exact timestamps, and raw identity fields. Security-ML evaluation critiques have repeatedly warned that hidden bias and unrealistic experimental design can lead to overconfident claims \cite{arp2022dosdonts,pendlebury2019tesseract}. Random within-dataset splits can further overestimate deployment performance when dataset-specific patterns are shared between training and test partitions. A credible evaluation must therefore distinguish legitimate encrypted-flow metadata from hard leakage, and it must evaluate robustness beyond a single random split.
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig1_problem_motivation.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig1_problem_motivation.pdf}
   \caption{Metadata-only IDS under encrypted MQTT monitoring. Payloads, topics, credentials, and client identities are hidden by encryption or privacy constraints, while encrypted-flow metadata remains observable.}
   \label{fig:motivation}
 \end{figure}
@@ -135,22 +122,22 @@ Fig.~\ref{fig:motivation} illustrates the monitoring problem. This paper makes f
 \section{Related Work}
 \label{sec:related}
 \subsection{MQTT and IoT Intrusion Detection}
-Machine-learning-based IoT intrusion detection has been studied extensively because IoT deployments combine constrained devices, heterogeneous protocols, and exposed network services \cite{algaradi2020survey,hussain2020machine,hodo2017taxonomy,buczak2016survey,khraisat2019survey}. MQTT is a particularly important protocol in this context. Its broker-mediated publish-subscribe model is efficient, but weak authentication, insecure deployment choices, broker exposure, and abnormal publish/subscribe behavior can produce detectable network-level symptoms. MQTT-IoT-IDS2020 introduced an MQTT-focused case study and evaluated packet-, uniflow-, and biflow-level features for attack detection \cite{hindy2020mqttiot}. MQTTset provided another MQTT benchmark for machine-learning experiments \cite{vaccari2020mqttset}. MQTTEEB-D extends this line of work with a real-world MQTT cybersecurity dataset collected from an IoT deployment \cite{mqtteebd2025}. These datasets make MQTT attack detection experimentally tractable, but their use still requires careful feature auditing.
+Machine-learning-based IoT intrusion detection has been studied extensively because IoT deployments combine constrained devices, heterogeneous protocols, and exposed network services \cite{algaradi2020survey,hussain2020machine,hodo2017taxonomy}. Broader IIoT security work has also emphasized trustworthy data exchange, blockchain-supported governance, and digital-twin security as complementary protection layers \cite{li2025blockchaindt}. MQTT is a particularly important protocol in this context. Its broker-mediated publish-subscribe model is efficient, but weak authentication, insecure deployment choices, broker exposure, and abnormal publish/subscribe behavior can produce detectable network-level symptoms. MQTT-focused benchmarks, including MQTTset, have made attack detection experimentally tractable, but their use still requires careful feature auditing \cite{vaccari2020mqttset}.
 
-Several broader IoT and IIoT datasets provide additional context. IoT-23 contains malware and benign IoT network traffic and is useful for external IoT robustness evaluation \cite{iot23}. CICIoT2023, ToN-IoT, Bot-IoT, N-BaIoT, and Edge-IIoTset cover different IoT and IIoT attack surfaces, device types, and collection environments \cite{ciciot2023,alsaedi2020toniot,koroniotis2019botiot,meidan2018nbaiot,ferrag2022edgeiiotset}. IoT botnet studies, including Mirai analyses, further show that compromised devices can generate large-scale network effects that are visible in timing, volume, and connection behavior \cite{antonakakis2017mirai,kolias2017mirai}. These corpora support benchmarking, but they also differ substantially in capture setup, labels, feature definitions, and attack distributions.
+Several broader IoT and IIoT corpora provide additional context. CICIoT2023, ToN-IoT, Bot-IoT, N-BaIoT, and Edge-IIoTset cover different attack surfaces, device types, and collection environments \cite{ciciot2023,alsaedi2020toniot,koroniotis2019botiot,meidan2018nbaiot,ferrag2022edgeiiotset}. IoT botnet studies, including Mirai analyses, further show that compromised devices can generate large-scale network effects that are visible in timing, volume, and connection behavior \cite{antonakakis2017mirai,kolias2017mirai}. These corpora support benchmarking, but they also differ substantially in capture setup, labels, feature definitions, and attack distributions.
 
 \subsection{Encrypted Traffic Analysis and Metadata-Only Monitoring}
-Encrypted traffic analysis has long used timing, direction, and size metadata when payload inspection is unavailable. Classical traffic-classification work used host behavior, Bayesian models, and flow statistics to infer application classes without relying only on port numbers \cite{karagiannis2005blinc,moore2005bayesian}. Later studies showed that time-related features can characterize encrypted and VPN traffic \cite{drapergil2016vpn}. Mobile and encrypted-application fingerprinting work further demonstrated that packet sizes and timing can reveal behavioral structure even when content is protected \cite{conti2016android,taylor2016appscanner}. Deep learning studies later explored packet-sequence and representation-learning approaches for encrypted traffic classification \cite{lotfollahi2020deeppacket,rezaei2019overview,aceto2019mimetic,wang2017encryptedcnn}. IoT traffic classifiers also use convolutional and recurrent models over flow or packet representations \cite{lopezmartin2017traffic,sivanathan2019iotdevices}.
+Encrypted traffic analysis has long used timing, direction, and size metadata when payload inspection is unavailable. Classical traffic-classification work used Bayesian models and flow statistics to infer application classes without relying only on port numbers \cite{moore2005bayesian}. Mobile and encrypted-application fingerprinting work further demonstrated that packet sizes and timing can reveal behavioral structure even when content is protected \cite{conti2016android,taylor2016appscanner}. Deep learning studies later explored packet-sequence and representation-learning approaches for encrypted traffic classification \cite{lotfollahi2020deeppacket,rezaei2019overview,aceto2019mimetic,wang2017encryptedcnn}. IoT traffic classifiers also use convolutional and recurrent models over flow or packet representations \cite{lopezmartin2017traffic,sivanathan2019iotdevices}.
 
 This paper differs from payload-oriented and packet-content approaches by enforcing a metadata-only boundary. The goal is not to decrypt TLS, bypass cryptographic protection, or replace authentication and access control. Instead, the objective is to test how far legitimate encrypted-flow metadata can support IDS decisions when content and raw identities are not used.
 
 \subsection{Dataset Leakage, Dataset Bias, and Cross-Dataset IDS Evaluation}
-Network IDS evaluation is vulnerable to closed-world assumptions. Sommer and Paxson emphasized the gap between machine-learning success in controlled settings and operational network intrusion detection \cite{sommer2010outside}. Broader security-ML critiques have also shown that leakage, unrealistic splits, and hidden experimental bias can inflate reported performance \cite{arp2022dosdonts,pendlebury2019tesseract}. Dataset surveys similarly show that benchmark suitability depends on capture environment, labeling, feature construction, attack diversity, and temporal realism \cite{ring2019survey}. More generally, dataset shift and transfer-learning studies show that training and test distributions often differ in real deployments \cite{quionero2009datasetshift,pan2010transfer}.
+Network IDS evaluation is vulnerable to closed-world assumptions. Sommer and Paxson emphasized the gap between machine-learning success in controlled settings and operational network intrusion detection \cite{sommer2010outside}. Dataset surveys similarly show that benchmark suitability depends on capture environment, labeling, feature construction, attack diversity, and temporal realism \cite{ring2019survey}. More generally, dataset shift and transfer-learning studies show that training and test distributions often differ in real deployments \cite{quionero2009datasetshift,pan2010transfer}.
 
 For metadata-only MQTT IDS, this means that a high random-split score is not sufficient. Features must be checked for leakage, and models should be evaluated under conservative sensitivity, cross-dataset transfer, and external robustness settings. Hard leakage and dataset-specific artifacts must be separated from legitimate metadata that is predictive because attack behavior changes flow dynamics.
 
 \subsection{Public IoT Security Datasets and MQTT Benchmarks}
-Public security datasets have shaped IDS evaluation, including CICIDS2017 and UNSW-NB15 for general network intrusion detection \cite{sharafaldin2018cicids,moustafa2015unsw}, MQTT-IoT-IDS2020, MQTTset, and MQTTEEB-D for MQTT-specific evaluation \cite{hindy2020mqttiot,vaccari2020mqttset,mqtteebd2025}, and IoT-23, ToN-IoT, Bot-IoT, N-BaIoT, CICIoT2023, and Edge-IIoTset for broader IoT and IIoT scenarios \cite{iot23,ciciot2023,alsaedi2020toniot,koroniotis2019botiot,meidan2018nbaiot,ferrag2022edgeiiotset}. Flow-based IDS surveys and online anomaly detectors such as Kitsune reinforce the practical value of compact network metadata for high-speed or resource-constrained monitoring \cite{sperotto2010flow,umer2017flow,garcia2009anomaly,ahmed2016survey,mirsky2018kitsune}. These datasets and methods are complementary rather than interchangeable. In particular, IoT-23 should be interpreted as an external IoT robustness dataset in this work, not as an MQTT benchmark.
+Public security datasets have shaped IDS evaluation, including CICIDS2017 and UNSW-NB15 for general network intrusion detection \cite{sharafaldin2018cicids,moustafa2015unsw}. Flow-based IDS surveys and online anomaly detectors such as Kitsune reinforce the practical value of compact network metadata for high-speed or resource-constrained monitoring \cite{sperotto2010flow,umer2017flow,garcia2009anomaly,ahmed2016survey,mirsky2018kitsune}. These datasets and methods are complementary rather than interchangeable. In particular, external IoT datasets should not be treated as MQTT benchmarks unless their capture protocol and feature space support that interpretation.
 
 \section{Methodology}
 \label{sec:methodology}
@@ -159,7 +146,7 @@ We define LAM-MQTT, a Leakage-Audited Metadata Framework for Encrypted MQTT Intr
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig2_framework.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig2_framework.pdf}
   \caption{LAM-MQTT evaluation framework. The pipeline ingests public datasets, applies leakage audit, builds feature policies, trains baseline models, and evaluates within-dataset, cross-dataset, and external robustness settings.}
   \label{fig:framework}
 \end{figure}
@@ -167,7 +154,7 @@ We define LAM-MQTT, a Leakage-Audited Metadata Framework for Encrypted MQTT Intr
 The pipeline contains six steps. First, datasets are ingested and labels are normalized for binary and multiclass tasks. Second, hard leakage fields are excluded. Third, cryptographic observability views are constructed. Fourth, a conservative sensitivity policy removes additional highly discriminative metadata. Fifth, a common cross-dataset metadata space aligns MQTT datasets for transfer evaluation. Sixth, within-dataset, cross-dataset, external robustness, feature-family, and multi-seed protocols are evaluated.
 
 \subsection{Dataset Ingestion and Label Normalization}
-The evaluation uses MQTTEEB-D, MQTT-IoT-IDS2020, and IoT-23. MQTTEEB-D is evaluated in two granularities. The packet-level strict view is retained as a weak baseline because it contains only a very small strict metadata set. The flow-window strict view is the main encrypted-flow representation for MQTTEEB-D and is evaluated at 1~s, 5~s, and 10~s windows. MQTT-IoT-IDS2020 is evaluated using biflow features. IoT-23 is used only for external IoT robustness validation. Labels are normalized into binary and multiclass targets where appropriate; no label or attack-name field is retained as a model input.
+The evaluation uses MQTTEEB-D \cite{mqtteebd2025}, MQTT-IoT-IDS2020 \cite{hindy2020mqttiot}, and IoT-23 \cite{iot23}. MQTTEEB-D is evaluated in two granularities. The packet-level strict view is retained as a weak baseline because it contains only a very small strict metadata set. The flow-window strict view is the main encrypted-flow representation for MQTTEEB-D and is evaluated at 1~s, 5~s, and 10~s windows. MQTT-IoT-IDS2020 is evaluated using biflow features. IoT-23 is used only for external IoT robustness validation. Labels are normalized into binary and multiclass targets where appropriate; no label or attack-name field is retained as a model input.
 
 \subsection{Hard Leakage Exclusion}
 LAM-MQTT removes hard leakage before model training. The removed categories include labels, attack categories, scenario names, source-file indicators, raw IP identities, exact timestamps, client identifiers, usernames, passwords, payload content, and raw topic strings. These fields either encode the target directly, identify the capture or scenario, or violate encrypted/privacy-constrained deployment assumptions.
@@ -204,7 +191,7 @@ LAM-MQTT constructs three observability views (Fig.~\ref{fig:views}). The full a
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig3_crypto_observability_views.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig3_crypto_observability_views.pdf}
   \caption{Cryptographic observability views. Full audited, broker-side secure, and strict encrypted-flow metadata are separated from fields excluded by the leakage audit.}
   \label{fig:views}
 \end{figure}
@@ -235,7 +222,7 @@ For MQTTEEB-D, packet-level records are additionally aggregated into fixed time 
 The raw timestamp is used only to assign packet records to windows and to derive duration and IAT statistics. It is not retained as a model input. For binary labels, a window is labeled as attack when any record in the window is labeled as attack. For multiclass labels, the window label follows the majority class within the window, and mixed-label information is used only for aggregation diagnostics.
 
 \subsection{Evaluation Protocol}
-The conservative sensitivity policy removes additional highly discriminative metadata to test whether performance depends on a small set of strong flow signals. This policy is a stress test, not the main deployment claim. The evaluated tasks include binary classification and multiclass classification when supported by the dataset labels. The model families include linear and tree-based baselines, with Macro F1 used as the primary metric. Accuracy is reported in the underlying metric tables but is not emphasized because IoT security datasets are often class-imbalanced.
+The conservative sensitivity policy removes additional highly discriminative metadata to test whether performance depends on a small set of strong flow signals. This policy is a stress test, not the main deployment claim. The evaluated tasks include binary classification and multiclass classification when supported by the dataset labels. The model families include linear and tree-based baselines, with Macro F1 used as the primary metric. Accuracy is reported in the underlying metric tables but is not emphasized because IDS benchmarks are often class-imbalanced \cite{buczak2016survey,khraisat2019survey}.
 
 The primary within-dataset protocol uses a 70/15/15 random stratified split with seed 42. Time-block splits are treated as formal performance only when the resulting test block contains at least two classes; invalid time-block rows are excluded from official performance interpretation. Cross-dataset experiments train on one MQTT dataset view and test on another using common metadata. IoT-23 experiments are treated as external IoT robustness validation rather than MQTT-to-MQTT transfer. The implementation records all processed feature views and metric tables for reproducibility.
 
@@ -267,7 +254,7 @@ MQTT-IoT biflow & multiclass & all views & 0.9992 \\
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig4_within_dataset_main_macro_f1.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig4_within_dataset_main_macro_f1.pdf}
   \caption{Within-dataset Macro F1 for packet-level MQTTEEB-D and MQTT-IoT biflow audited views. MQTTEEB-D flow-window results are reported separately.}
   \label{fig:within}
 \end{figure}
@@ -298,7 +285,7 @@ MQTT-IoT biflow & conservative & 0.9684 \\
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig5_crypto_observability_ablation_revised.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig5_crypto_observability_ablation_revised.pdf}
   \caption{Crypto-observability ablation under audited and conservative feature policies.}
   \label{fig:crypto}
 \end{figure}
@@ -326,7 +313,7 @@ MQTTEEB-D 10 s & MQTT-IoT & 0.2149 \\
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig6_mqtt_to_mqtt_cross_dataset_main.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig6_mqtt_to_mqtt_cross_dataset_main.pdf}
   \caption{Bidirectional MQTT-to-MQTT cross-dataset Macro F1 under common encrypted-flow metadata.}
   \label{fig:cross}
 \end{figure}
@@ -338,7 +325,7 @@ Feature-family ablation further clarifies the metadata signal. Fig.~\ref{fig:fam
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig7_feature_family_ablation.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig7_feature_family_ablation.pdf}
   \caption{Feature-family ablation for MQTT-IoT and MQTTEEB-D strict 5~s metadata.}
   \label{fig:family}
 \end{figure}
@@ -347,7 +334,7 @@ Feature importance should be interpreted with the ablation rather than as causal
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{Fig8_feature_importance.pdf}
+  \includegraphics[width=\linewidth]{figures/Fig8_feature_importance.pdf}
   \caption{Model-level feature importance for metadata-based IDS. Importance is model-level evidence and should not be interpreted as causal attribution.}
   \label{fig:importance}
 \end{figure}
@@ -364,5 +351,5 @@ Future work should evaluate additional MQTT captures, real broker deployments, v
 The study uses public datasets: MQTTEEB-D, MQTT-IoT-IDS2020, and IoT-23. The source code, configuration files, leakage-audit rules, feature-view construction scripts, processed metric tables, and figure-generation scripts are available at: \url{https://github.com/DunLi-Tsinghua/LAM-MQTT}. The original raw datasets are not redistributed in the repository and should be obtained from their official sources, subject to their respective access and redistribution terms. The implementation records feature views, leakage audit decisions, processed metrics, and figures for reproducibility. The method does not decrypt TLS traffic and does not replace authentication, access control, or protocol hardening. Sensitive raw fields such as payloads, topics, credentials, client identifiers, raw IP identities, and exact timestamps are excluded from model inputs.
 
 \bibliographystyle{IEEEtran}
-\bibliography{references_stage3C}
+\bibliography{references}
 \end{document}
