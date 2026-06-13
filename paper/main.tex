@@ -104,7 +104,7 @@ Fig.~\ref{fig:motivation} illustrates this encrypted MQTT monitoring setting.
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{figures/Fig1_problem_motivation.pdf}
-  \caption{Cryptographic observability boundary for metadata-only IDS under encrypted MQTT monitoring. Payloads, topics, credentials, client identities, raw IP identities, and exact timestamps are excluded, while encrypted-flow metadata remains observable.}
+  \caption{MQTT-based IoT traffic observability under encrypted broker-mediated monitoring. IoT publishers and subscribers communicate with an MQTT broker through TLS-protected PUBLISH/SUBSCRIBE flows; payloads, raw topics, credentials, client identifiers, raw IP identities, and exact timestamps are excluded, while broker-side flow metadata remains observable.}
   \label{fig:motivation}
 \end{figure*}
 
@@ -150,7 +150,7 @@ We define LAM-MQTT, a Leakage-Audited Metadata Framework for Encrypted MQTT Intr
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{figures/Fig2_framework.pdf}
-  \caption{LAM-MQTT leakage-audited experimental framework. The pipeline ingests public datasets, normalizes labels, quarantines hard leakage fields, constructs observability-aware feature policies, trains baseline learners, and evaluates within-dataset, MQTT-to-MQTT, and external IoT robustness settings.}
+  \caption{LAM-MQTT pipeline for MQTT-based IoT traffic. Packet traces, biflow features, and flow-window metadata are passed through MQTT-aware leakage audit, observability feature policies, baseline IDS models, and within-dataset, MQTT-to-MQTT, and external IoT robustness evaluations.}
   \label{fig:framework}
 \end{figure*}
 
@@ -195,7 +195,7 @@ LAM-MQTT constructs three observability views (Fig.~\ref{fig:views}). The full a
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{figures/Fig3_crypto_observability_views.pdf}
-  \caption{Cryptographic observability feature policies. Hard leakage and sensitive raw fields are removed before model training, while full audited, broker-side secure, and strict encrypted-flow metadata views retain progressively constrained legitimate metadata.}
+  \caption{MQTT/TLS observability policies for metadata-only IDS. Raw MQTT application and identity fields are excluded, while full audited, broker-side secure, and strict encrypted-flow views retain progressively constrained flow metadata available near the MQTT broker.}
   \label{fig:views}
 \end{figure*}
 
