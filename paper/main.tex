@@ -202,6 +202,7 @@ LAM-MQTT constructs three observability views (Fig.~\ref{fig:views}). The full a
 \centering
 \caption{Audited metadata feature counts by dataset and observability view.}
 \label{tab:featureviews}
+\begin{threeparttable}
 \begin{tabular}{lccc}
 \toprule
 Dataset & Full & Broker & Strict \\
@@ -214,6 +215,11 @@ MQTTEEB-D flow 5 s & 15 & 15 & 14 \\
 MQTTEEB-D flow 10 s & 15 & 15 & 14 \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Dataset sources: MQTTEEB-D~\cite{mqtteebd2025}; MQTT-IoT-IDS2020~\cite{hindy2020mqttiot}; IoT-23~\cite{iot23}.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 Table~\ref{tab:featureviews} reports the audited feature counts. For MQTT-to-MQTT transfer, the framework aligns 14 common metadata features: packet count, byte summary statistics, duration, IAT summary statistics, byte and packet rates, and burstiness.
@@ -239,6 +245,7 @@ MQTT-IoT-IDS2020 shows much stronger within-dataset separability after hard leak
 \centering
 \caption{Within-dataset Macro F1 under audited metadata. Packet-level and flow-window rows are separate feature granularities.}
 \label{tab:within}
+\begin{threeparttable}
 \begin{tabular}{llll}
 \toprule
 Dataset/granularity & Task & View & Macro F1 \\
@@ -252,6 +259,11 @@ MQTT-IoT biflow & binary & all views & 0.9991 \\
 MQTT-IoT biflow & multiclass & all views & 0.9992 \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Dataset sources: MQTTEEB-D~\cite{mqtteebd2025}; MQTT-IoT-IDS2020~\cite{hindy2020mqttiot}.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}[!t]
@@ -271,6 +283,7 @@ Table~\ref{tab:crypto} and Fig.~\ref{fig:crypto} report the crypto-observability
 \centering
 \caption{Crypto-observability and conservative sensitivity results. Packet-level strict and flow-window strict results are separate feature granularities.}
 \label{tab:crypto}
+\begin{threeparttable}
 \begin{tabular}{llr}
 \toprule
 Dataset/view & Policy & Macro F1 \\
@@ -283,6 +296,11 @@ MQTT-IoT biflow & strict audited & 0.9991 \\
 MQTT-IoT biflow & conservative & 0.9684 \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Dataset sources: MQTTEEB-D~\cite{mqtteebd2025}; MQTT-IoT-IDS2020~\cite{hindy2020mqttiot}.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}[!t]
@@ -299,6 +317,7 @@ Table~\ref{tab:cross} and Fig.~\ref{fig:cross} report MQTT-to-MQTT transfer with
 \centering
 \caption{MQTT-to-MQTT cross-dataset Macro F1 with 14 common metadata features. MQTTEEB-D rows denote flow-window settings.}
 \label{tab:cross}
+\begin{threeparttable}
 \begin{tabular}{llr}
 \toprule
 Train & Test & Macro F1 \\
@@ -311,6 +330,11 @@ MQTTEEB-D 5 s & MQTT-IoT & 0.2735 \\
 MQTTEEB-D 10 s & MQTT-IoT & 0.2149 \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Dataset sources: MQTTEEB-D~\cite{mqtteebd2025}; MQTT-IoT-IDS2020~\cite{hindy2020mqttiot}.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}[!t]
