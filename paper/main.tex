@@ -104,12 +104,12 @@ The central question is therefore not whether metadata can replace protocol secu
 
 Metadata-only detection is useful but risky. It is useful because many attacks alter observable communication dynamics even when payloads are encrypted. It is risky because public security datasets can contain artifacts that inflate within-dataset scores, including labels, attack-category fields, scenario names, source-file indicators, exact timestamps, and raw identity fields. Security-ML evaluation critiques have repeatedly warned that hidden bias and unrealistic experimental design can lead to overconfident claims \cite{arp2022dosdonts,pendlebury2019tesseract}. Random within-dataset splits can further overestimate deployment performance when dataset-specific patterns are shared between training and test partitions. A credible evaluation must therefore distinguish legitimate encrypted-flow metadata from hard leakage, and it must evaluate robustness beyond a single random split.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
   \centering
-  \includegraphics[width=\linewidth]{figures/Fig1_problem_motivation.pdf}
-  \caption{Metadata-only IDS under encrypted MQTT monitoring. Payloads, topics, credentials, and client identities are hidden by encryption or privacy constraints, while encrypted-flow metadata remains observable.}
+  \includegraphics[width=\textwidth]{figures/Fig1_problem_motivation.pdf}
+  \caption{Cryptographic observability boundary for metadata-only IDS under encrypted MQTT monitoring. Payloads, topics, credentials, client identities, raw IP identities, and exact timestamps are excluded, while encrypted-flow metadata remains observable.}
   \label{fig:motivation}
-\end{figure}
+\end{figure*}
 
 Fig.~\ref{fig:motivation} illustrates the monitoring problem. This paper makes four contributions.
 \begin{itemize}
@@ -146,12 +146,12 @@ Public security datasets have shaped IDS evaluation, including CICIDS2017 and UN
 \subsection{LAM-MQTT Overview}
 We define LAM-MQTT, a Leakage-Audited Metadata Framework for Encrypted MQTT Intrusion Detection. The framework is designed to evaluate what can be learned from metadata that remains observable under encryption or privacy-constrained monitoring. Fig.~\ref{fig:framework} summarizes the pipeline.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
   \centering
-  \includegraphics[width=\linewidth]{figures/Fig2_framework.pdf}
-  \caption{LAM-MQTT evaluation framework. The pipeline ingests public datasets, applies leakage audit, builds feature policies, trains baseline models, and evaluates within-dataset, cross-dataset, and external robustness settings.}
+  \includegraphics[width=\textwidth]{figures/Fig2_framework.pdf}
+  \caption{LAM-MQTT leakage-audited experimental framework. The pipeline ingests public datasets, normalizes labels, quarantines hard leakage fields, constructs observability-aware feature policies, trains baseline learners, and evaluates within-dataset, MQTT-to-MQTT, and external IoT robustness settings.}
   \label{fig:framework}
-\end{figure}
+\end{figure*}
 
 The pipeline contains six steps. First, datasets are ingested and labels are normalized for binary and multiclass tasks. Second, hard leakage fields are excluded. Third, cryptographic observability views are constructed. Fourth, a conservative sensitivity policy removes additional highly discriminative metadata. Fifth, a common cross-dataset metadata space aligns MQTT datasets for transfer evaluation. Sixth, within-dataset, cross-dataset, external robustness, feature-family, and multi-seed protocols are evaluated.
 
@@ -191,12 +191,12 @@ Here, $\mathcal{S}$ is the set of additional highly discriminative metadata remo
 \subsection{Cryptographic Observability Views}
 LAM-MQTT constructs three observability views (Fig.~\ref{fig:views}). The full audited view is an upper-bound metadata setting after hard leakage removal. The broker-side secure metadata view represents features plausibly available near the MQTT broker without raw sensitive content. The strict encrypted-flow view contains features expected to remain observable even when payloads and topics are encrypted.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
   \centering
-  \includegraphics[width=\linewidth]{figures/Fig3_crypto_observability_views.pdf}
-  \caption{Cryptographic observability views. Full audited, broker-side secure, and strict encrypted-flow metadata are separated from fields excluded by the leakage audit.}
+  \includegraphics[width=\textwidth]{figures/Fig3_crypto_observability_views.pdf}
+  \caption{Cryptographic observability feature policies. Hard leakage and sensitive raw fields are removed before model training, while full audited, broker-side secure, and strict encrypted-flow metadata views retain progressively constrained legitimate metadata.}
   \label{fig:views}
-\end{figure}
+\end{figure*}
 
 \begin{table}[!t]
 \centering
