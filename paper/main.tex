@@ -100,10 +100,7 @@ In practical deployments, MQTT monitoring is often positioned at the broker, gat
 
 The monitoring setting is increasingly constrained by encryption and privacy requirements. TLS protects application content in transit \cite{rfc8446}; privacy policies and deployment boundaries may also prevent inspection of raw payloads, raw topic strings, usernames, passwords, client identifiers, and raw IP identities. Intrusion detection systems (IDSs) that rely on such fields can therefore be difficult to deploy, reproduce, or justify. Website fingerprinting and modern encrypted-traffic representation learning further show that packet length, timing, and sequence regularities can remain informative even when content is hidden \cite{hayes2016kfingerprinting,lin2022etbert}. This motivates metadata-only detection: instead of inspecting content, a detector can use flow duration, packet counts, byte statistics, packet-size statistics, inter-arrival-time (IAT) statistics, rates, burstiness, and TCP flag counts, a direction consistent with prior flow and encrypted-traffic analysis \cite{karagiannis2005blinc,drapergil2016vpn}.
 
-The central question is therefore not whether metadata can replace protocol security, but whether a carefully bounded metadata signal can provide an additional detection layer. Such a layer is complementary to access-control and data-governance mechanisms for IIoT, including smart-contract and proof-inspired access-control schemes \cite{li2025hyperiiot,li2025dpsiiot}. Answering this question requires an explicit observability model: features should be admitted only when they would plausibly remain available without decrypting traffic or collecting sensitive raw fields.
-
-Metadata-only detection is useful but risky. It is useful because many attacks alter observable communication dynamics even when payloads are encrypted. It is risky because public security datasets can contain artifacts that inflate within-dataset scores, including labels, attack-category fields, scenario names, source-file indicators, exact timestamps, and raw identity fields. Security-ML evaluation critiques have repeatedly warned that hidden bias and unrealistic experimental design can lead to overconfident claims \cite{arp2022dosdonts,pendlebury2019tesseract}. Random within-dataset splits can further overestimate deployment performance when dataset-specific patterns are shared between training and test partitions. A credible evaluation must therefore distinguish legitimate encrypted-flow metadata from hard leakage, and it must evaluate robustness beyond a single random split.
-
+Fig.~\ref{fig:motivation} illustrates this encrypted MQTT monitoring setting.
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{figures/Fig1_problem_motivation.pdf}
@@ -111,7 +108,11 @@ Metadata-only detection is useful but risky. It is useful because many attacks a
   \label{fig:motivation}
 \end{figure*}
 
-Fig.~\ref{fig:motivation} illustrates the monitoring problem. This paper makes four contributions.
+The central question is therefore not whether metadata can replace protocol security, but whether a carefully bounded metadata signal can provide an additional detection layer. Such a layer is complementary to access-control and data-governance mechanisms for IIoT, including smart-contract and proof-inspired access-control schemes \cite{li2025hyperiiot,li2025dpsiiot}. Answering this question requires an explicit observability model: features should be admitted only when they would plausibly remain available without decrypting traffic or collecting sensitive raw fields.
+
+Metadata-only detection is useful but risky. It is useful because many attacks alter observable communication dynamics even when payloads are encrypted. It is risky because public security datasets can contain artifacts that inflate within-dataset scores, including labels, attack-category fields, scenario names, source-file indicators, exact timestamps, and raw identity fields. Security-ML evaluation critiques have repeatedly warned that hidden bias and unrealistic experimental design can lead to overconfident claims \cite{arp2022dosdonts,pendlebury2019tesseract}. Random within-dataset splits can further overestimate deployment performance when dataset-specific patterns are shared between training and test partitions. A credible evaluation must therefore distinguish legitimate encrypted-flow metadata from hard leakage, and it must evaluate robustness beyond a single random split.
+
+This paper makes four contributions.
 \begin{itemize}
   \item We formulate encrypted MQTT intrusion detection under cryptographic observability constraints.
   \item We develop a leakage-audited metadata construction procedure that separates hard leakage from legitimate encrypted-flow metadata.
